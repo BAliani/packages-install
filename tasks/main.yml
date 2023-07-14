@@ -1,0 +1,13 @@
+$ cat tasks/main.yml 
+---
+# tasks file for orange.agh.formation
+tasks:
+
+  - name: udate repository
+    shell: apk update
+
+  - name: install python3-3.11.4-r0
+    shell: apk add python3-3.11.4-r0
+
+  - name: install gedit
+    shell: apk add gedit-44.2-r1
