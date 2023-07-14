@@ -1,12 +1,8 @@
----
-# tasks file for orange.agh.formation
-tasks:
-
-  - name: udate repository
-    shell: apk update
-
-  - name: install python3-3.11.4-r0
-    shell: apk add python3-3.11.4-r0
-
-  - name: install gedit
-    shell: apk add gedit-44.2-r1
+  1 - name: udate repository
+  2   shell: apk update
+  3 
+  4 - name: install mysql
+  5   shell: apk add mysql
+  6 
+  7 - name: install gedit
+  8   shell: apk add gedit
