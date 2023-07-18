@@ -1,8 +1,6 @@
-  1 - name: udate repository
-  2   shell: apk update
-  3 
-  4 - name: install mysql
-  5   shell: apk add mysql
-  6 
-  7 - name: install gedit
-  8   shell: apk add gedit
+- name: udate repository
+  shell: apk update
+- name: install mysql
+  shell: apk add mysql
+- name: install gedit
+  shell: apk add gedit
