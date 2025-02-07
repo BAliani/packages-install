@@ -1,6 +1,6 @@
 - name: udate repository
-  shell: apk update
+  shell: apt update
 - name: install mysql
-  shell: apk add mysql
+  shell: apt install mysql
 - name: install gedit
-  shell: apk add gedit
+  shell: apt install gedit
