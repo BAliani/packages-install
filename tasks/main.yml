@@ -1,6 +1,14 @@
-- name: udate repository
-  shell: apt update
-- name: install mysql
-  shell: apt install mysql
-- name: install gedit
-  shell: apt install gedit
+---
+- name: Update repository
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install MySQL
+  ansible.builtin.apt:
+    name: mysql-server
+    state: present
+
+- name: Install gedit
+  ansible.builtin.apt:
+    name: gedit
+    state: present
