@@ -46,12 +46,6 @@ Exécuter la commande suivante :
 ansible-galaxy install -r requirements.yml
 ```
 
-Le rôle sera installé par défaut dans :
-
-```bash
-~/.ansible/roles/
-```
-
 Vérifier sa présence :
 
 ```bash
@@ -60,22 +54,10 @@ ansible-galaxy role list
 
 ## 4. Préparer le playbook de test
 
-Créer un fichier `playbook.yml` :
+Créer un fichier `playbook-install-pkg.yml` :
 
 ```bash
-vim playbook.yml
-```
-
-Ajouter le contenu suivant :
-
-```yaml
----
-- name: Test external Ansible role
-  hosts: all
-  become: true
-
-  roles:
-    - packages-install
+vim playbook-install-pkg.yml
 ```
 
 ## 5. Exécuter le playbook
@@ -83,25 +65,6 @@ Ajouter le contenu suivant :
 En supposant que l'inventaire Ansible s'appelle `inventory` :
 
 ```bash
-ansible-playbook -i inventory playbook.yml
+ansible-playbook -i inventory playbook-install-pkg.yml
 ```
-
-## 6. Vérifier le résultat
-
-Sur les machines cibles, vérifier que les paquets sont installés :
-
-```bash
-dpkg -l | grep -E 'mysql-server|gedit'
-```
-
-Le résultat attendu est l'installation de MySQL Server et de Gedit sur les machines ciblées.
-
----
-
-**À retenir :**
-
-- `requirements.yml` : déclare les rôles externes nécessaires au projet.
-- `ansible-galaxy install` : télécharge et installe les rôles.
-- `playbook.yml` : consomme le rôle installé.
-- `ansible-playbook` : exécute le scénario sur les machines cibles.
 
